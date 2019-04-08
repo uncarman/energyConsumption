@@ -3,7 +3,7 @@ define(function (require) {
 
     app.controller('login', ['$scope', function ($scope) {
 
-        global.on_load_func();
+        global.on_load_func($scope);
 
         $scope.$watch('$viewContentLoaded', function () {
             global.on_loaded_func($scope);
@@ -28,6 +28,16 @@ define(function (require) {
                 global["goto"]($scope.settings.default_page);
             }
         })();
+
+        $scope.fake_login = function() {
+            global.set_storage_key("session", [
+                {
+                    key: "user",
+                    val: "fakeUser"
+                }
+            ]);
+            global["goto"]($scope.settings.default_page);
+        }
 
     }])
 });

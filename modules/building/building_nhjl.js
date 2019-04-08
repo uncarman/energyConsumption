@@ -38,7 +38,6 @@ define(function (require) {
                 ["设备描述", "2F售菜间南门"],
                 ["开关状态", "打开"],
             ]
-            ]
         }
         $scope.datas = { ...settings.default_datas, ...datas };
 

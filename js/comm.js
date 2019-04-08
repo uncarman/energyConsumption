@@ -569,6 +569,7 @@ define(function (require, exports, module) {
             // 前端校验用户登录
             var _session = global.read_storage('session');
             var user = _session.user;
+            console.log(user);
             if(!user) {
                 global["goto"]('login');
             }
