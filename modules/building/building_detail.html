@@ -1,0 +1,24 @@
+<div class="content">
+    <div class="topMenu">
+    	<div class="glyphicon glyphicon-menu-left pull-left"></div>
+    	<div class="glyphicon glyphicon-remove pull-right"></div>
+    	<h3>建筑详情</h3>
+    </div>
+
+    <div class="mainbody buildingDetail">
+    	
+    	<img class="media-object" ng-src="{{datas.building.img}}">
+    	<h4 class="media-heading" ng-bind="datas.building.name"></h4>
+		<p class="media-location" ng-bind="datas.building.location"></p>
+
+    	<ul class="list-group">
+			<li class="list-group-item" ng-repeat="f in datas.building.features">
+				<img class="icons pull-left" ng-src="{{f[0]}}" />
+				<span ng-bind="f[1]" class="pull-left"></span>
+				<span ng-bind="f[2]" class="pull-right"></span>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+
+    </div>
+</div>

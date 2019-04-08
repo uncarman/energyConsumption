@@ -1,0 +1,54 @@
+<div>
+	<p class="debug-btn" ng-if="settings.is_debug">
+		<a class="btn btn-default" ng-click="goto('dashboard')">返回功能模块</a>
+	</p>
+
+	<ul class="nav nav-pills top-menus">
+		<li class="logo">
+			<a ng-click="goto('dashboard')">
+				<img src="imgs/logo.png">
+			</a>
+		</li>
+		<li ng-repeat="m in top_menus"
+			ng-class="(m.children && m.children.length > 0 ? 'dropdown ' : ' ')
+				+ (cur_page.indexOf(m.page) >= 0 ? 'active ' : ' ')
+				+ (m.show ? 'open' : '')"
+			ng-click="topMenuClick(this);">
+			<a ng-class="m.children && m.children.length > 0 ? 'dropdown-toggle' : ''"
+			   ng-click = "m.link != '' ? goto(m.link) : ''"
+			   data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				<span ng-class="m.class"></span>
+				<span ng-bind="m.name"></span>
+				<span class="caret" ng-show="m.children && m.children.length > 0"></span>
+			</a>
+			<ul ng-if="m.children && m.children.length > 0" class="dropdown-menu">
+				<li ng-repeat="cm in m.children">
+					<a ng-bind="cm.name"
+						ng-class="cur_page == cm.page ? 'on' : ''" 
+						ng-click="goto(cm.link)"></a>
+				</li>
+			</ul>
+		</li>
+		<li class="pull-right menu-right">
+			<span class="icons icon-search"></span>
+			<span class="icons icon-help"></span>
+			<span class="icons icon-notice"></span>
+			<img src="imgs/face.png">
+			SuperAdmin
+			<span class="icons icon-language"></span>
+		</li>
+	</ul>
+
+	<div class="top-tabs" ng-if="cur_page_level_3 !== null">
+		<h1 class="title" ng-if="cur_page_level_2 !== null">
+			<img ng-src="{{cur_page_level_2.icon || 'http://cdn.iciba.com/news/word/20181225.jpg'}}" class="imgsmall">
+			<span ng-bind="cur_page_level_2.name"></span>
+		</h1>
+		<ul class="nav nav-tabs" ng-if="cur_page_level_2.children && cur_page_level_2.children.length > 0">
+			<li ng-class="c.page == cur_page ? 'active' : ''"
+				ng-repeat="c in cur_page_level_2.children">
+				<a ng-click="goto(c.link);" ng-bind="c.name"></a>
+			</li>
+		</ul>
+	</div>
+</div>

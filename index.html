@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面正在加载，请稍候...</title>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+</head>
+<body class="remove_tabbar animate in_app">
+    <div ui-view class="out-content"></div>
+
+    <script>
+        is_fake_ajax = true;
+        cdn = "";
+        is_cdn = false;
+        version = "123"; //(new Date()).getTime();
+        is_debug = true;
+        fake_sms = true;
+    </script>
+    <script src="js/libs/require.min.js"></script><!--库文件不添加版本号-->
+    <script src="main.js"></script>
+    <script src="js/fake_ajax_return.js"></script>
+</body>
+</html>

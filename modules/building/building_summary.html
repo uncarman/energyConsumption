@@ -1,0 +1,54 @@
+<div class="content">
+    <div class="topMenu">
+    	<div class="glyphicon glyphicon-menu-left pull-left"></div>
+    	<div class="glyphicon glyphicon-remove pull-right"></div>
+    	<h3>建筑详情</h3>
+    </div>
+    
+    <div class="mainbody buildingSummary">
+    	<div class="media">
+            <div class="media-left">
+                <img class="media-object" ng-src="{{datas.building.img}}" style="width: 160px; height: 160px;">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading" ng-bind="datas.building.name"></h4>
+                <p ng-bind="datas.building.location"></p>
+                <a ng-click="gotoDetail(datas.building.id);">查看更多</a>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list-group">
+		<li class="list-group-item" ng-click="gotoDetail(datas.building.id, 'nhjl');">
+			<div class="glyphicon glyphicon-menu-right pull-right"></div>
+			<div class="glyphicon glyphicon-signal"></div>
+			能耗计量
+		</li>
+		<li class="list-group-item" ng-click="gotoDetail(datas.building.id, 'ntkt');">
+			<div class="glyphicon glyphicon-menu-right pull-right"></div>
+			<div class="glyphicon glyphicon-cd"></div>
+			暖通空调
+		</li>
+		<li class="list-group-item" ng-click="gotoDetail(datas.building.id, 'bpd');">
+			<div class="glyphicon glyphicon-menu-right pull-right"></div>
+			<div class="glyphicon glyphicon-random"></div>
+			变配电
+		</li>
+		<li class="list-group-item" ng-click="gotoDetail(datas.building.id, 'znzm');">
+			<div class="glyphicon glyphicon-menu-right pull-right"></div>
+			<div class="glyphicon glyphicon-certificate"></div>
+			智能照明
+		</li>
+		<li class="list-group-item" ng-click="gotoDetail(datas.building.id, 'mj');">
+			<div class="glyphicon glyphicon-menu-right pull-right"></div>
+			<div class="glyphicon glyphicon-adjust"></div>
+			门禁管理
+		</li>
+		<li class="list-group-item" ng-click="gotoDetail(datas.building.id, 'xfjk');">
+			<div class="glyphicon glyphicon-menu-right pull-right"></div>
+			<div class="glyphicon glyphicon-fire"></div>
+			消防监控
+		</li>
+	</ul>
+
+</div>

@@ -1,0 +1,42 @@
+<div class="content" page-title="消防监控">
+    <div class="topMenu">
+    	<div class="glyphicon glyphicon-menu-left pull-left"></div>
+    	<div class="glyphicon glyphicon-remove pull-right"></div>
+    	<h3>消防监控</h3>
+    </div>
+
+    <div class="mainbody buildingXFK">
+		<h4 class="media-heading" ng-bind="datas.building.name"></h4>
+
+		<ul class="category-head">
+			<li ng-repeat="f in datas.building.ntkt" 
+				ng-class="datas.topMenuSelected == $index ? 'on' : ''"
+				ng-click="changeType($index);"
+				ng-bind="f[0]"></li>
+		</ul>
+
+		<ul class="category-head category-head-sub">
+			<li ng-repeat="f in datas.building.ntkt[datas.topMenuSelected][2]" 
+				ng-class="datas.subMenuSelected == $index ? 'on' : ''"
+				ng-click="changeFloor($index);"
+				ng-bind="f"></li>
+		</ul>
+
+		<div class="clearfix"></div>
+
+		<div class="curFloor">
+			<img src="../imgs/floor/2F.jpg" />
+		</div>
+
+		<div class="details">
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="f in datas.deviceDetail">
+					<span ng-bind="f[0]" class="pull-left"></span>
+					<span ng-bind="f[1]" class="pull-right"></span>
+					<div class="clearfix"></div>
+				</li>
+			</ul>
+		</div>
+
+    </div>
+</div>

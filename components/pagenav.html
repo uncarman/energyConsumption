@@ -1,0 +1,17 @@
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li ng-click="get_datas_prev();">
+            <a aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li ng-repeat="p in datas.pageList"
+            ng-click="get_datas(p);"
+            ng-class="p == datas.cur_page ? 'active' : ''" ><a ng-bind="p">--</a></li>
+        <li ng-click="get_datas_next();">
+            <a aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

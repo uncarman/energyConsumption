@@ -1,0 +1,536 @@
+<div class="content">
+
+    <div class="mainbody dashboard">
+
+    <div class="finished1">
+
+        <div class="form-inline body-header form-withmargin">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="输入订单号或用户手机号">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group pull-right" role="group" aria-label="...">
+                <button type="button" class="btn --primary">Left</button>
+                <button type="button" class="btn ">Middle</button>
+                <button type="button" class="btn ">Right</button>
+            </div>
+        </div>
+
+        <div class="form-inline body-header form-withmargin">
+
+            <button class="btn btn-primary">全部列表</button>
+            <button class="btn btn-default">刷新列表</button>
+
+            <div class="pull-right">
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn --primary">Left</button>
+                    <button type="button" class="btn ">Middle</button>
+                    <button type="button" class="btn ">Right</button>
+                </div>
+
+                <div class="form-group" style="margin-left: 30px;">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="输入订单号或用户手机号">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ajax_loading" ng-show="ajax_loading" class="iLoading_loading_pic"></div>
+        <table class="table table-hover" ng-show="!is_loading && datas.dataList.length > 0">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name<span class="icons icon-order-desc"></span></th>
+                <th>Last Name</th>
+                <th>Username</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>鸽用流感疫苗，适合6-12个月鸽，从国外一手进口的最好疫苗，独家出售</td>
+                <td>
+                    <span class="label-sp">
+                        <b>CHN-2018-535264</b>
+                        <em class="icons icon-star glyphicon glyphicon-star-empty"></em>
+                        5.0 某某某文字
+                    </span>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <span class="icons glyphicon glyphicon-option-horizontal"
+                              id="dropdownMenu_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu_1">
+                            <li><a class="default" href="#1"><span class="glyphicon glyphicon-pencil"></span>基本信息</a></li>
+                            <li><a class="default" href="#2"><span class="glyphicon glyphicon-plus"></span>额外信息</a></li>
+                            <li><a href="#3"><span class="glyphicon glyphicon-yen"></span>资产详情</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td></td>
+                <td>
+                    <span class="dot-text dot-primary">上架中</span>
+                    <span class="dot-text dot-default">编辑中</span>
+                    <span class="dot-text dot-danger">已下架</span>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>
+                    <img class="imgsmall" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                    <img class="imgsmall" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                    <img class="imgsmall" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                </td>
+                <td><span class="label --primary">
+                        <span class="dot-text dot-primary">待审核</span>
+                    </span></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="clearfix"></div>
+
+        <page-nav ng-show="!is_loading && datas.dataList.length > 0"></page-nav>
+
+        <p id="data_no_item" ng-show="!is_loading && datas.dataList.length <= 0" class="nodatas">
+            <span class="icons info_icon"></span>
+            没有数据
+        </p>
+        <div class="clearfix"></div>
+
+
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            弹出框1
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title form-inline">
+                            <em>编辑信息</em>
+                            <input class="form-control" placeholder="当前 CHN0000-0001" disabled>
+
+                            <div class="input-group pull-right">
+                                <input type="text" class="form-control" placeholder="输入订单号或用户手机号">
+                                <div class="input-group-addon">
+
+                                </div>
+                            </div>
+                        </h4>
+                    </div>
+                    <div class="modal-body grey-bg">
+                        <table class="table table-noborder table-condensed">
+                            <tbody>
+                            <tr>
+                                <td><input type="radio" name="aaa" checked></td>
+                                <td>CHN2018-07-2422343</td>
+                                <td>子的商品标题显示在这里</td>
+                                <td width="50"><img src="http://cdn.iciba.com/news/word/20181225.jpg" class="imgsmall"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="aaa"></td>
+                                <td>CHN2018-07-2422343</td>
+                                <td>子的商品标题显示在这里</td>
+                                <td width="50"><img src="http://cdn.iciba.com/news/word/20181225.jpg" class="imgsmall"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="aaa"></td>
+                                <td>CHN2018-07-2422343</td>
+                                <td>子的商品标题显示在这里</td>
+                                <td width="50"><img src="http://cdn.iciba.com/news/word/20181225.jpg" class="imgsmall"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary-dis pull-left">添加排序</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-default">删除</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">确定修改</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+            弹出框2
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title form-inline">
+                            <em>编辑场次信息</em>
+                        </h4>
+                    </div>
+                    <div class="modal-body grey-bg">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-5">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-5">
+                                    <input type="password" class="form-control" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-inline form-group">
+                                <label class="col-sm-2 control-label">详细地址</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control">
+                                        <option></option>
+                                    </select>
+                                    <select class="form-control">
+                                        <option></option>
+                                    </select>
+                                    <select class="form-control">
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">输入框</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">上传图片</label>
+                                <div class="col-sm-10">
+                                    <div class="upload-file">+</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">确定修改</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
+            弹出框3
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal3" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title form-inline">
+                            <em>编辑场次信息</em>
+                        </h4>
+                    </div>
+                    <div class="modal-body grey-bg">
+                        <div class="row form-withmargin">
+                            <div class="col-sm-6 row-group">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <span class="row-group-title">文字一</span>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <span class="row-group-cont">
+                                            <input value="文字一" />
+                                        <div class="upload-file upload-file-sm">+</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 row-group">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <span class="row-group-title">文字一</span>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <span class="row-group-cont">
+                                            <input value="文字一" />
+                                            <input value="文字一" />
+                                            <input value="文字一" />
+                                            <div class="upload-file upload-file-sm">+</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-withmargin">
+                            <div class="col-sm-6 row-group">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <span class="row-group-title">文字一</span>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <span class="row-group-cont">
+                                            <input value="文字一" />
+                                            <input value="文字一" />
+                                            <input value="文字一" />
+                                            <input value="文字一" />
+                                            <input value="文字一" />
+                                            <input value="文字一" />
+                                            <input value="文字一" />
+                                        <div class="upload-file upload-file-sm">+</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">确定修改</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" ng-click="showConfirm();">
+            alert
+        </button>
+
+
+    </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rtModal1">
+            右侧弹框1
+        </button>
+        <div class="modal model-rt fade" id="rtModal1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title form-inline">
+                            <em>编辑场次信息</em>
+                            <div class="pull-right">
+                                <button class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button class="btn btn-primary" data-dismiss="modal">确认修改</button>
+                            </div>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="section">
+                            <div class="row">
+                                <div class="col-sm-12 section-title">
+                                    <b>图片展示</b>首位为缩略图，展示图最多6张及小于10M的短视频
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img class="imgmiddle" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                                    <img class="imgmiddle" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                                    <img class="imgmiddle" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                                    <img class="imgmiddle" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                                    <img class="imgmiddle" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                                    <img class="imgmiddle" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="row">
+                                <div class="col-sm-12 section-title">
+                                    <b>商品展示</b>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="row">
+                                    <div class="col-sm-2 row-title">
+                                        标题
+                                    </div>
+                                    <div class="col-sm-10  row-content">
+                                        文字内容文字内容文字内容
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2 row-title">
+                                        标题
+                                    </div>
+                                    <div class="col-sm-10  row-content">
+                                        文字内容文字内容文字内容
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2 row-title">
+                                        标题
+                                    </div>
+                                    <div class="col-sm-10  row-content">
+                                        <img class="imgsmall" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                                        <a href="#">查看详情</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="row">
+                                <div class="col-sm-12 section-title">
+                                    <b>商品展示</b>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="row">
+                                    <div class="col-sm-2 row-title">
+                                        标题
+                                    </div>
+                                    <div class="col-sm-5 row-content">
+                                        <input class="form-control" value="文字内容文字内容文字内容">
+                                    </div>
+                                    <div class="col-sm-5 row-content">
+                                        <span class="text-warning">文字内容文字内容文字内容</span>
+                                    </div>
+                                </div>
+                                <div class="row form-inline">
+                                    <div class="col-sm-2 row-title">
+                                        销售方式:
+                                    </div>
+                                    <div class="col-sm-4 row-content">
+                                        <select class="form-control">
+                                            <option>开尔自营</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-2 row-title">
+                                        标题
+                                    </div>
+                                    <div class="col-sm-4 row-content">
+                                        <select class="form-control">
+                                            <option>开尔自营</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-inline">
+                                    <div class="col-sm-2 row-title">
+                                        标题
+                                    </div>
+                                    <div class="col-sm-10 row-content">
+                                        <input class="form-control" value="文字内容文字内容文字内容">
+                                        <span class="label">
+                                            OS0000-0001
+                                            <span class="icons glyphicon glyphicon-remove"></span>
+                                        </span>
+                                        <span class="label">
+                                            OS0000-0001
+                                            <span class="icons glyphicon glyphicon-remove"></span>
+                                        </span>
+                                        <span class="label">
+                                            OS0000-0001
+                                            <span class="icons glyphicon glyphicon-remove"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2 row-title">
+                                        标题
+                                    </div>
+                                    <div class="col-sm-10 row-content">
+                                        <img class="imgsmall" src="http://cdn.iciba.com/news/word/20181225.jpg">
+                                        <a href="#">查看详情</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="row">
+                                <div class="col-sm-12 section-title">
+                                    <b>图片展示</b>
+                                    已上架的商品，可以通过此小程序码访问
+                                    <a style="margin-left:20px;">下载</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rtModal2">
+            右侧弹框2
+        </button>
+        <div class="modal model-rt fade" id="rtModal2" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title form-inline">
+                            <em>场次拍卖鸽单</em>
+                            <div class="pull-right">
+                                <button class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button class="btn btn-primary" data-dismiss="modal">添加新鸽</button>
+                            </div>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-hover" ng-show="!is_loading && datas.dataList.length > 0">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>排序<span class="icons icon-order-asc"></span></th>
+                                    <th>鸽环信息</th>
+                                    <th>起拍价</th>
+                                    <th>最高出价</th>
+                                    <th>竞拍结果</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>12</td>
+                                    <td>CHN2018-07-2422343</td>
+                                    <td>￥15000.0元</td>
+                                    <td>--</td>
+                                    <td>流拍</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>12</td>
+                                    <td>CHN2018-07-2422343</td>
+                                    <td>￥5000.0元</td>
+                                    <td><span class="text-height">￥7500.0元</span></td>
+                                    <td><span class="text-height">拍出</span></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>12</td>
+                                    <td>CHN2018-07-2422343</td>
+                                    <td>￥15000.0元</td>
+                                    <td>--</td>
+                                    <td>流拍</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

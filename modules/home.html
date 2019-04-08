@@ -1,0 +1,43 @@
+<div class="content">
+    
+    
+    <div class="mainbody home">
+
+        <div class="form-inline form-withmargin">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn" ng-class="datas.opt.state == 1 ? '--primary' : ''" ng-click="reset_datas(this, 1);">地图</button>
+                <button type="button" class="btn" ng-class="datas.opt.state == 2 ? '--primary' : ''" ng-click="reset_datas(this, 2);">列表</button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="map" ng-show="datas.opt.state == 1">
+            map
+        </div>
+        <div class="list" ng-show="datas.opt.state == 2">
+            <div class="media" ng-click="gotoSummary(b.id);" ng-repeat="b in datas.dataList">
+                <div class="glyphicon glyphicon-chevron-right"></div>
+                <div class="media-left">
+                    <a>
+                        <img class="media-object" ng-src="{{b.img}}" style="width: 64px; height: 64px;">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading" ng-bind="b.name"></h4>
+                    <p ng-bind="b.location"></p>
+                </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <p id="data_no_item" ng-show="!is_loading && datas.dataList.length <= 0" class="nodatas">
+                <span class="icons info_icon"></span>
+                没有数据
+            </p>
+        </div>
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+
+
