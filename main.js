@@ -11,7 +11,8 @@ require.config({
         'angular-async-loader': _cdn+'js/libs/angular_async_loader.min',
         'angular-touch': _cdn+'js/libs/angular_touch.min',
         'angular-animate': _cdn+'js/libs/angular_animate.min',
-        'jquery': _cdn+'js/libs/jquery_1.11.0.min',
+        'jquery': _cdn+'js/libs/jquery-1.7.2.min',
+        "pinchzoom": _cdn+'js/libs/pinchzoom',
         'bootstrap': _cdn+'js/libs/bootstrap.3.3.7.min',
         "dialog": _cdn+'js/f_ui_dialog',
         "comm": _cdn+'js/comm',
@@ -24,6 +25,7 @@ require.config({
         'angular-async-loader': {deps: ['angular']},
 
         'bootstrap': {deps: ['jquery']},
+        'pinchzoom': {deps: ['jquery']},
     },
     urlArgs: "v=" +  version
 });

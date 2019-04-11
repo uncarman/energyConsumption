@@ -45,6 +45,7 @@ body {  }
 h2 { font-size: 22px; font-weight: bold; }
 h3 { font-size: 20px; font-weight: bold; text-align: center; }
 h4 { font-size: 16px; font-weight: bold; line-height: 1.5; }
+h2 em { font-size: 14px; line-height: 2; }
 
 .topMenu { height: 50px; padding: 10px; background: #ddd; }
 .topMenu * { line-height: 30px; }
@@ -61,6 +62,8 @@ h4 { font-size: 16px; font-weight: bold; line-height: 1.5; }
 .home .media { border-bottom: 1px solid #ddd; margin-bottom:10px; padding-bottom:15px; }
 
 .buildingSummary {}
+.buildingSummary .list-group li { line-height: 2; }
+
 
 .buildingDetail {}
 .buildingDetail .media-object { width:100%; margin-bottom: 15px; }
@@ -69,21 +72,22 @@ h4 { font-size: 16px; font-weight: bold; line-height: 1.5; }
 
 .buildingNTKT {}
 .buildingNTKT h4 { margin-bottom: 15px;  }
-.buildingNTKT .category-head {width:100%; display: inline; white-space: nowrap;overflow-x:scroll;float:left;overflow-y:hidden;}
-.buildingNTKT .category-head li { display:inline-block; padding: 10px 15px 15px; border-bottom: 2px solid #fff; }
-.buildingNTKT .category-head li.on, .buildingNTKT .category-head li.on { border-bottom: 2px solid #ddd; }
-.buildingNTKT .curFloor { width: 100%; margin: 20px 0; }
-.buildingNTKT .curFloor img { width: 100%; }
+
 
 .buildingNHJL {}
 .buildingNHJL h2 { margin: 0 0 15px 0; }
-.buildingNHJL .summaryOuter {width:100%; display: inline; white-space: nowrap;overflow-x:scroll;float:left;overflow-y:hidden;}
-.buildingNHJL .summaryNH { margin: 0px; }
-.buildingNHJL .summaryNH th, .buildingNHJL .summaryNH td { white-space: nowrap; } 
-.buildingNHJL .summaryNH td { color: #2e6da4; }
 
-.buildingNHJL .echart { margin: 15px 0; width:100%; height: 280px; background: #efefef; }
 
-.buildingNHJL .summaryNH th
+.curFloor { width: 100%; margin: 20px 0;}
+.curFloor img { width: 100%; padding-bottom: 20px; margin-bottom: 20px; }
+.curFloor .point_on { position: absolute; width: 20px; height: 20px; background: url("../imgs/park_has.png") center center; background-size: 100% 100% no-repeat; }
+
+
+.summaryOuter {width:100%; display: inline; white-space: nowrap;overflow-x:scroll;float:left;overflow-y:hidden;}
+.summaryNH { margin: 0px; }
+.summaryNH th, .buildingNHJL .summaryNH td { white-space: nowrap; } 
+.summaryNH td { color: #2e6da4; }
+.echart { margin: 15px 0; width:100%; background: #efefef; }
+.echart img { width: 100%; }
 
 

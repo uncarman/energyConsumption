@@ -32,7 +32,7 @@ define(function (require) {
                 $scope.goto("building_" + type + "/"+id);
             }
         }
-
+        
         // 执行函数
         //$scope.get_datas($scope);
     }])

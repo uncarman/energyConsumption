@@ -34,6 +34,10 @@ define(function (require) {
         }
         $scope.datas = { ...settings.default_datas, ...datas };
 
+        $scope.gotoSummary = function() {
+            $scope.goto("building_summary/"+$stateParams.id);
+        }
+        
         // 执行函数
         //$scope.get_datas($scope);
     }])

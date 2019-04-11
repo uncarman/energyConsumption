@@ -1,7 +1,7 @@
 define(function (require) {
     var app = require('../../js/app').app;
 
-    app.controller('buildingNHJL', ['$scope', '$stateParams', function ($scope, $stateParams) {
+    app.controller('buildingNHJLDetail', ['$scope', '$stateParams', function ($scope, $stateParams) {
 
         global.on_load_func($scope);
 
@@ -13,29 +13,48 @@ define(function (require) {
             // pass
         });
 
+        var pageTypes = {
+        	"electric": "电能",
+        	"water": "水能",
+        	"gas": "天然气",
+        	"vapour": "蒸汽"
+        }
+
         // 初始化数据
         var datas = {
+            // 一级菜单选中状态
+            topMenuSelected: 0,
+            
             // 是否显示选项
             show_settings: false,
-            // 页面默认选项
-            opt: {
-                state : 1
-            },
 
-            // 筛选条件
             opts: {
-                
+
             },
-            // 正在编辑中的筛选条件
             newOpts: {
 
             },
 
+            pageType: pageTypes[$stateParams.type],
+
             // 假数据
             building: {
                 id: $stateParams.id,
+                type: $stateParams.type,
+
                 name: "嘉兴市融通商务中心4号楼",
+                subMenu: [
+                	["总能耗概况", "nhgk"],
+                    ["能耗分项", "nhfx"],
+                    ["建筑区域", "jzqy"],
+                    ["组织架构", "zjjg"]
+                ]
             },
+            summaryTable: [
+                ["总用电量", "12349.00kwh"]
+            ],
+            listTableTitles: [],
+            listTableDatas: [],
         }
         $scope.datas = { ...settings.default_datas, ...datas };
 
@@ -52,18 +71,13 @@ define(function (require) {
             $scope.get_datas($scope);
         }
 
-        // 四个大标签
-        $scope.gotoPage = function(page) {
-            $scope.goto("building_" + page + "/"+$stateParams.id);
-        }
+        $scope.gotoDetail = function(bid, type) {
 
-        // 进入监测分项
-        $scope.gotoDetail = function(type) {
-            $scope.goto("building_nhjl_detail/"+$stateParams.id+"/"+type);
         }
 
         // 执行函数
         //$scope.get_datas($scope);
-        
+        $scope.changeFloor($scope.datas.subMenuSelected);
+
     }])
 });

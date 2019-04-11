@@ -1,18 +1,41 @@
 <div class="content" page-title="能耗计量">
     <div class="topMenu">
-    	<div class="glyphicon glyphicon-menu-left pull-left"></div>
-    	<div class="glyphicon glyphicon-cog pull-right"></div>
+    	<div class="glyphicon glyphicon-menu-left pull-left" ng-click="gotoSummary();"></div>
+    	<div class="glyphicon glyphicon-cog pull-right" ng-click="displaySettings(1);" data-toggle="modal" data-target="#myModal"></div>
     	<h3>能耗计量</h3>
     </div>
 
     <div class="mainbody buildingNHJL">
-		<h2>总能耗概况</h2>
+    	<div class="form-inline form-withmargin">
+	        <div class="btn-group btn-group-justified" role="group">
+	            <a class="btn --primary">
+	            	监测分析
+	            </a>
+	            <a class="btn" ng-click="gotoPage('sjtj');">
+	                数据统计
+	            </a>
+	            <a class="btn" ng-click="gotoPage('bjcl');">
+		            报警处理
+		        </a>
+	            <a class="btn" ng-click="gotoPage('jcsj');">
+		            基础数据
+		        </a>
+	        </div>
+	        <div class="clearfix"></div>
+	    </div>
+
+		<div class="clearfix"></div>
+
+		<h2>
+			总能耗概况
+			<em class="pull-right">2019-04-10</em>
+		</h2>
 
 		<div class="summaryOuter">
 			<table class="table summaryNH">
 		   		<tbody>
 		   			<!-- 电 -->
-		   			<tr ng-click="gotoDetail(datas.building.id , 'electric');">
+		   			<tr ng-click="gotoDetail('electric');">
 		   				<th>总用电量</th>
 		   				<td>12349.00kwh</td>
 		   				<th>环比</th>
@@ -20,7 +43,7 @@
 		   				<th>2018年同比</th>
 		   				<td>10.12% <span class="glyphicon glyphicon-arrow-up"></span></td>
 		   			</tr>
-		   			<tr ng-click="gotoDetail(datas.building.id , 'electric');">
+		   			<tr ng-click="gotoDetail('electric');">
 		   				<th>能耗密度</th>
 		   				<td>12349.00kwh</td>
 		   				<th>环比</th>
@@ -28,7 +51,7 @@
 		   				<th>2018年同比</th>
 		   				<td>10.12% <span class="glyphicon glyphicon-arrow-up"></span></td>
 		   			</tr>
-		   			<tr ng-click="gotoDetail(datas.building.id , 'electric');">
+		   			<tr ng-click="gotoDetail('electric');">
 		   				<th>费用</th>
 		   				<td>12349.00kwh</td>
 		   				<th>环比</th>
@@ -38,7 +61,7 @@
 		   			</tr>
 
 		   			<!-- 水 -->
-		   			<tr ng-click="gotoDetail(datas.building.id , 'water');">
+		   			<tr ng-click="gotoDetail('water');">
 		   				<th>总用水量</th>
 		   				<td>0</td>
 		   				<th>环比</th>
@@ -46,7 +69,7 @@
 		   				<th>2018年同比</th>
 		   				<td>0</td>
 		   			</tr>
-		   			<tr ng-click="gotoDetail(datas.building.id , 'water');">
+		   			<tr ng-click="gotoDetail('water');">
 		   				<th>费用</th>
 		   				<td>0</td>
 		   				<th>环比</th>
@@ -56,7 +79,7 @@
 		   			</tr>
 
 					<!-- 天然气 -->
-		   			<tr ng-click="gotoDetail(datas.building.id , 'gas');">
+		   			<tr ng-click="gotoDetail('gas');">
 		   				<th>总天然气量</th>
 		   				<td>0</td>
 		   				<th>环比</th>
@@ -64,7 +87,7 @@
 		   				<th>2018年同比</th>
 		   				<td>0</td>
 		   			</tr>
-		   			<tr ng-click="gotoDetail(datas.building.id , 'gas');">
+		   			<tr ng-click="gotoDetail('gas');">
 		   				<th>费用</th>
 		   				<td>0</td>
 		   				<th>环比</th>
@@ -74,7 +97,7 @@
 		   			</tr>
 
 		   			<!-- 蒸汽 -->
-		   			<tr ng-click="gotoDetail(datas.building.id , 'vapour');">
+		   			<tr ng-click="gotoDetail('vapour');">
 		   				<th>总用蒸汽量</th>
 		   				<td>0</td>
 		   				<th>环比</th>
@@ -82,7 +105,7 @@
 		   				<th>2018年同比</th>
 		   				<td>0</span></td>
 		   			</tr>
-		   			<tr ng-click="gotoDetail(datas.building.id , 'vapour');">
+		   			<tr ng-click="gotoDetail('vapour');">
 		   				<th>费用</th>
 		   				<td>0</td>
 		   				<th>环比</th>
@@ -96,7 +119,7 @@
 
 		<div class="clearfix"></div>
 
-		<div class="echart"></div>
+		<div class="echart"><img src="../imgs/chart01.png" /></div>
 
 		<div class="clearfix"></div>
 
@@ -127,6 +150,27 @@
 		   		</thead>
 		   		<tbody>
 		   			<tr>
+		   				<th>2019-04-06</th>
+		   				<td>12345.00kwh</td>
+		   				<td>50.00A</td>
+		   				<td>30.00A</td>
+		   				<td>45.00A</td>
+		   				<td>A相电压</td>
+		   				<td>224.90V</td>
+		   				<td>227.00V</td>
+		   				<td>229.00V</td>
+		   				<td>50.00A</td>
+		   				<td>30.00A</td>
+		   				<td>45.00A</td>
+		   				<td>A相电压</td>
+		   				<td>224.90V</td>
+		   				<td>227.00V</td>
+		   				<td>229.00V</td>
+		   				<td>50.00A</td>
+		   				<td>30.00A</td>
+		   				<td>45.00A</td>
+		   			</tr>
+		   			<tr>
 		   				<th>2019-04-07</th>
 		   				<td>12345.00kwh</td>
 		   				<td>50.00A</td>
@@ -136,10 +180,84 @@
 		   				<td>224.90V</td>
 		   				<td>227.00V</td>
 		   				<td>229.00V</td>
+		   				<td>50.00A</td>
+		   				<td>30.00A</td>
+		   				<td>45.00A</td>
+		   				<td>A相电压</td>
+		   				<td>224.90V</td>
+		   				<td>227.00V</td>
+		   				<td>229.00V</td>
+		   				<td>50.00A</td>
+		   				<td>30.00A</td>
+		   				<td>45.00A</td>
 		   			</tr>
 		   		</tbody>
 		   	</table>
 		</div>
+
+		<div class="dialog ng-hide" ng-show="datas.show_settings">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title form-inline">
+                            <em>设置条件</em>
+                            <div class="glyphicon glyphicon-remove pull-right" ng-click="displaySettings(0);"></div>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="section">
+                            <div class="row">
+                                <div class="col-sm-2 row-title">
+                                    开始时间:
+                                </div>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" ng-model="datas.newOpts.fromDate">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 row-title">
+                                    结束时间:
+                                </div>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" ng-model="datas.newOpts.toDate">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 row-title">
+                                    查看方式:
+                                </div>
+                                <div class="col-sm-10">
+                                    <select class="form-control" ng-model="datas.newOpts.type">
+                                    	<option selected="selected">逐日</option>
+                                    	<option>逐月</option>
+                                    	<option>逐年</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 row-title">
+                                    选择同比:
+                                </div>
+                                <div class="col-sm-10">
+                                    <select class="form-control" ng-model="datas.newOpts.compareYear">
+                                    	<option selected="selected">2018</option>
+                                    	<option>2017</option>
+                                    	<option>2016</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="row">
+                            	<div class="col-sm-11">
+                            		<button class="btn btn-block --primary" ng-click=refreshDatas();>更新</button>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>

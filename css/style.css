@@ -141,3 +141,14 @@ a:hover,a:active { color: #0b78ff; }
 .dialogDiv .dialogBottom button { width:120px; height: 32px; margin: 0 12px 0px; border-radius: 4px; }
 .dialogDiv .dialogBottom button.btn-solid { border:1px solid #1890ff; background: #1890ff; color:#fff; }
 .dialogDiv .dialogBottom button.btn-light { border:1px solid #d9d9d9; background: #fff; color:#979797; }
+
+
+.category-head {width:100%; display: inline; white-space: nowrap;overflow-x:scroll;float:left;overflow-y:hidden;}
+.category-head li { display:inline-block; padding: 10px 15px 15px; border-bottom: 2px solid #fff; }
+.category-head li.on, .category-head li.on { border-bottom: 2px solid #ddd; }
+
+.dialog { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0,0,0,0.2); }
+.dialog .modal-dialog { margin: 25px; }
+.dialog .modal-content { border-radius: 0; box-shadow: none; }
+.dialog .modal-body .row { margin: 0 0 15px 0; }
+.dialog .modal-body .row .row-title { font-weight: bold; line-height: 2; }

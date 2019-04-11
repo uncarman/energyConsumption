@@ -151,12 +151,43 @@ define(function (require) {
                 controllerUrl: './modules/building/building_xfjk',
                 controller: 'buildingXFJK'
             })
+
+
             ///////////// 能耗计量
             .state('building_nhjl/:id', {
                 url: '/building_nhjl/:id',
                 templateUrl: './modules/building/building_nhjl.html?v='+version,
                 controllerUrl: './modules/building/building_nhjl',
                 controller: 'buildingNHJL'
+            })
+            ///////////// 数据统计
+            .state('building_sjtj/:id', {
+                url: '/building_sjtj/:id',
+                templateUrl: './modules/building/building_sjtj.html?v='+version,
+                controllerUrl: './modules/building/building_sjtj',
+                controller: 'buildingSJTJ'
+            })
+            ///////////// 报警处理
+            .state('building_bjcl/:id', {
+                url: '/building_bjcl/:id',
+                templateUrl: './modules/building/building_bjcl.html?v='+version,
+                controllerUrl: './modules/building/building_bjcl',
+                controller: 'buildingBJCL'
+            })
+            ///////////// 基础数据
+            .state('building_jcsj/:id', {
+                url: '/building_jcsj/:id',
+                templateUrl: './modules/building/building_jcsj.html?v='+version,
+                controllerUrl: './modules/building/building_jcsj',
+                controller: 'buildingJCSJ'
+            })
+
+            ///////////// 能耗计量分项
+            .state('building_nhjl_detail/:id/:type', {
+                url: '/building_nhjl_detail/:id/:type',
+                templateUrl: './modules/building/building_nhjl_detail.html?v='+version,
+                controllerUrl: './modules/building/building_nhjl_detail',
+                controller: 'buildingNHJLDetail'
             })
 
     }]);

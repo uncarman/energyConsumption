@@ -3,7 +3,7 @@ define(function (require) {
 
     app.controller('dashboard', ['$scope', function ($scope) {
 
-        global.on_load_func();
+        global.on_load_func($scope);
 
         $scope.$watch('$viewContentLoaded', function () {
             global.on_loaded_func($scope);

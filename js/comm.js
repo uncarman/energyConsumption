@@ -54,6 +54,19 @@ define(function (require, exports, module) {
             "10004": "用户验证失败",
             "10005": "操作被拒绝",
         },
+
+        floorBgs: {
+            "2F" : "../imgs/floor/2F.jpg",
+            "3F" : "../imgs/floor/3F.jpg",
+            "4F" : "../imgs/floor/4F.jpg",
+            "5F" : "../imgs/floor/5F.jpg",
+            "6F" : "../imgs/floor/6F.jpg",
+            "7F" : "../imgs/floor/7F.jpg",
+            "8F" : "../imgs/floor/8F.jpg",
+            "9F" : "../imgs/floor/9F.jpg",
+            "10F" : "../imgs/floor/10F.jpg",
+            "楼顶" : "../imgs/floor/top.jpg",
+        }
     };
 
     var global = {

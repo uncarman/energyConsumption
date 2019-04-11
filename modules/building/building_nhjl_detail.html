@@ -1,0 +1,258 @@
+<div class="content" page-title="[X]能监测">
+    <div class="topMenu">
+    	<div class="glyphicon glyphicon-menu-left pull-left" ng-click="gotoSummary();"></div>
+    	<div class="glyphicon glyphicon-cog pull-right" ng-click="displaySettings(1);" data-toggle="modal" data-target="#myModal"></div>
+    	<h3 ng-bind="datas.pageType+'监测'"></h3>
+    </div>
+
+    <div class="mainbody buildingNHJLDetail">
+		<ul class="category-head">
+			<li ng-repeat="f in datas.building.subMenu" 
+				ng-class="datas.topMenuSelected == $index ? 'on' : ''"
+				ng-click="changeType($index);"
+				ng-bind="f[0]"></li>
+		</ul>
+
+		<div class="clearfix"></div>
+
+		<div class="summaryOuter">
+			<table class="table summaryNH">
+		   		<tbody>
+		   			<!-- 电 -->
+		   			<tr>
+						<p class="t1">
+							<em ng-bind="datas.summaryData.totalName">--</em>
+							<b ng-bind="datas.summaryData.total | number : 2" ng-class="compareClass(datas.summaryData.total, 'd');">--</b>
+							<i ng-bind="datas.summaryData.totalUnit">--</i>
+						</p>
+						<p class="t2" ng-class="compareClass(datas.summaryData.totalCompareMonth, 't');">
+							<em>环比:</em>
+							<span class="glyphicon" ng-class="compareClass(datas.summaryData.totalCompareMonth, 'i');"></span>
+							<b ng-bind="compareValue(datas.summaryData.totalCompareMonth);">--</b>
+						</p>
+						<p class="t3" ng-class="compareClass(datas.summaryData.totalCompareYear, 't');">
+							<em>2018年同比:</em>
+							<span class="glyphicon" ng-class="compareClass(datas.summaryData.totalCompareYear, 'i');"></span>
+							<b ng-bind="compareValue(datas.summaryData.totalCompareYear);">--</b>
+						</p>
+
+		   				<th ng-bind="datas.summaryData.totalName"></th>
+		   				<td>
+							<span ng-bind="datas.summaryData.total | number : 2" ng-class="compareClass(datas.summaryData.total, 'd');">--</span>
+							<span ng-bind="datas.summaryData.totalUnit">--</span>
+						</td>
+		   				<th>环比</th>
+		   				<td>
+							<span ng-bind="compareValue(datas.summaryData.totalCompareMonth);"></span>
+							<span class="glyphicon" ng-class="compareClass(datas.summaryData.totalCompareMonth, 'i');">--</span>
+						</td>
+		   				<th>2018年同比</th>
+		   				<td>
+							<b ng-bind="compareValue(datas.summaryData.totalCompareYear);">--</b>
+							<span class="glyphicon" ng-class="compareClass(datas.summaryData.totalCompareYear, 'i');"></span>
+						</td>
+		   			</tr>
+		   			<tr>
+		   				<th>当量标煤</th>
+		   				<td>12349.00kwh</td>
+		   				<th>环比</th>
+		   				<td>10.12% <span class="glyphicon glyphicon-arrow-up"></span></td>
+		   				<th>2018年同比</th>
+		   				<td>10.12% <span class="glyphicon glyphicon-arrow-up"></span></td>
+		   			</tr>
+		   			<tr>
+		   				<th>累计碳排放</th>
+		   				<td>12349.00kwh</td>
+		   				<th>环比</th>
+		   				<td>10.12% <span class="glyphicon glyphicon-arrow-up"></span></td>
+		   				<th>2018年同比</th>
+		   				<td>10.12% <span class="glyphicon glyphicon-arrow-up"></span></td>
+		   			</tr>
+		   			<tr>
+		   				<th>能耗密度</th>
+		   				<td>0</td>
+		   				<th>环比</th>
+		   				<td>0</td>
+		   				<th>2018年同比</th>
+		   				<td>0</td>
+		   			</tr>
+		   			<tr>
+		   				<th>费用</th>
+		   				<td>0</td>
+		   				<th>环比</th>
+		   				<td>0</td>
+		   				<th>2018年同比</th>
+		   				<td>0</td>
+		   			</tr>
+		   		</tbody>
+		   	</table>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div ng-show="datas.topMenuSelected == 0">
+			<div class="echart"><img src="../imgs/chart01.png" /></div>
+		</div>
+		<div ng-show="datas.topMenuSelected == 1">
+			<div class="echart">
+				<img src="../imgs/chart02.png" />
+				<img src="../imgs/chart03.png" />
+			</div>
+		</div>
+		<div ng-show="datas.topMenuSelected >= 2">
+			<div class="echart">
+				<img src="../imgs/chart04.png" />
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="summaryOuter">
+			<table class="table">
+				<thead>
+					<tr>
+						<th ng-repeat="t in datas.listTableTitles" ng-bind="t"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="(k,v) in datas.listTableDatas">
+						<td ng-repeat="t in datas.listTableTitles"
+							ng-bind="v[$index]"></td>
+					</tr>
+				</tbody>
+		   		<!--<thead>-->
+		   			<!--<tr>-->
+		   				<!--<th>日期</th>-->
+		   				<!--<th>总用电量</th>-->
+		   				<!--<th>环比</th>-->
+		   				<!--<th>2018年同比</th>-->
+		   				<!--<th>能耗密度</th>-->
+		   				<!--<th>环比</th>-->
+		   				<!--<th>2018年同比</th>-->
+		   				<!--<th>费用</th>-->
+		   				<!--<th>环比</th>-->
+		   				<!--<th>2018年同比</th>-->
+		   				<!--<th>总用水量</th>-->
+		   				<!--<th>环比</th>-->
+		   				<!--<th>2018年同比</th>-->
+		   				<!--<th>总天然气量</th>-->
+		   				<!--<th>环比</th>-->
+		   				<!--<th>2018年同比</th>-->
+		   				<!--<th>总用蒸汽量</th>-->
+		   				<!--<th>环比</th>-->
+		   				<!--<th>2018年同比</th>-->
+		   			<!--</tr>-->
+		   		<!--</thead>-->
+		   		<!--<tbody>-->
+		   			<!--<tr>-->
+		   				<!--<th>2019-04-06</th>-->
+		   				<!--<td>12345.00kwh</td>-->
+		   				<!--<td>50.00A</td>-->
+		   				<!--<td>30.00A</td>-->
+		   				<!--<td>45.00A</td>-->
+		   				<!--<td>A相电压</td>-->
+		   				<!--<td>224.90V</td>-->
+		   				<!--<td>227.00V</td>-->
+		   				<!--<td>229.00V</td>-->
+		   				<!--<td>50.00A</td>-->
+		   				<!--<td>30.00A</td>-->
+		   				<!--<td>45.00A</td>-->
+		   				<!--<td>A相电压</td>-->
+		   				<!--<td>224.90V</td>-->
+		   				<!--<td>227.00V</td>-->
+		   				<!--<td>229.00V</td>-->
+		   				<!--<td>50.00A</td>-->
+		   				<!--<td>30.00A</td>-->
+		   				<!--<td>45.00A</td>-->
+		   			<!--</tr>-->
+		   			<!--<tr>-->
+		   				<!--<th>2019-04-07</th>-->
+		   				<!--<td>12345.00kwh</td>-->
+		   				<!--<td>50.00A</td>-->
+		   				<!--<td>30.00A</td>-->
+		   				<!--<td>45.00A</td>-->
+		   				<!--<td>A相电压</td>-->
+		   				<!--<td>224.90V</td>-->
+		   				<!--<td>227.00V</td>-->
+		   				<!--<td>229.00V</td>-->
+		   				<!--<td>50.00A</td>-->
+		   				<!--<td>30.00A</td>-->
+		   				<!--<td>45.00A</td>-->
+		   				<!--<td>A相电压</td>-->
+		   				<!--<td>224.90V</td>-->
+		   				<!--<td>227.00V</td>-->
+		   				<!--<td>229.00V</td>-->
+		   				<!--<td>50.00A</td>-->
+		   				<!--<td>30.00A</td>-->
+		   				<!--<td>45.00A</td>-->
+		   			<!--</tr>-->
+		   		<!--</tbody>-->
+		   	</table>
+		</div>
+
+		<div class="dialog ng-hide" ng-show="datas.show_settings">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title form-inline">
+                            <em>设置条件</em>
+                            <div class="glyphicon glyphicon-remove pull-right" ng-click="displaySettings(0);"></div>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="section">
+                            <div class="row">
+                                <div class="col-sm-2 row-title">
+                                    开始时间:
+                                </div>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" ng-model="datas.newOpts.fromDate">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 row-title">
+                                    结束时间:
+                                </div>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" ng-model="datas.newOpts.toDate">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 row-title">
+                                    查看方式:
+                                </div>
+                                <div class="col-sm-10">
+                                    <select class="form-control" ng-model="datas.newOpts.type">
+                                    	<option selected="selected">逐日</option>
+                                    	<option>逐月</option>
+                                    	<option>逐年</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 row-title">
+                                    选择同比:
+                                </div>
+                                <div class="col-sm-10">
+                                    <select class="form-control" ng-model="datas.newOpts.compareYear">
+                                    	<option selected="selected">2018</option>
+                                    	<option>2017</option>
+                                    	<option>2016</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="row">
+                            	<div class="col-sm-11">
+                            		<button class="btn btn-block --primary" ng-click=refreshDatas();>更新</button>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
