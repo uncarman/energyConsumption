@@ -37,7 +37,7 @@ define(function (require) {
         $scope.datas = { ...settings.default_datas, ...datas };
 
         $scope.gotoSummary = function() {
-            $scope.goto("building_summary/"+$stateParams.id);
+            $scope.goto("building_nhjl/"+$stateParams.id);
         }
         
         $scope.displaySettings = function(type) {
