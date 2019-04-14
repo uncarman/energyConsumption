@@ -25,6 +25,10 @@ define(function (require) {
         }
         $scope.datas = { ...settings.default_datas, ...datas };
 
+        $scope.gotoSummary = function() {
+            $scope.goto("home");
+        }
+
         $scope.gotoDetail = function(id, type) {
             if(typeof type == "undefined") {
                 $scope.goto("building_detail/"+id);
