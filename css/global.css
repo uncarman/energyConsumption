@@ -90,4 +90,8 @@ h2 em { font-size: 14px; line-height: 2; }
 .echart { margin: 15px 0; width:100%; background: #efefef; }
 .echart img { width: 100%; }
 
+.buildingBJCL {}
+.buildingBJCL .list-group { border-left:1px solid #ddd; border-right:1px solid #ddd; }
 
+.buildingSJTJ {}
+.buildingSJTJ h2 { margin-bottom: 10px; font-size: 16px; }

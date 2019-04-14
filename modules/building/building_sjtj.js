@@ -18,6 +18,7 @@ define(function (require) {
 
             // 是否显示选项
             show_settings: false,
+            menuSelected: 0,
 
             opts: {
 
@@ -49,8 +50,8 @@ define(function (require) {
             $scope.get_datas($scope);
         }
 
-        $scope.gotoDetail = function(bid, type) {
-
+        $scope.changeTab = function(type) {
+            $scope.datas.menuSelected = type;
         }
 
         // 执行函数

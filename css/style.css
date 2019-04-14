@@ -147,7 +147,7 @@ a:hover,a:active { color: #0b78ff; }
 .category-head li { display:inline-block; padding: 10px 15px 15px; border-bottom: 2px solid #fff; }
 .category-head li.on, .category-head li.on { border-bottom: 2px solid #ddd; }
 
-.dialog { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0,0,0,0.2); }
+.dialog { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0,0,0,0.2); z-index: 1000; }
 .dialog .modal-dialog { margin: 25px; }
 .dialog .modal-content { border-radius: 0; box-shadow: none; }
 .dialog .modal-body .row { margin: 0 0 15px 0; }

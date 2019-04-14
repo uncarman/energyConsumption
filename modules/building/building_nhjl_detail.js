@@ -50,6 +50,13 @@ define(function (require) {
                     ["组织架构", "zjjg"]
                 ]
             },
+            summaryData: {
+                totalName: "电",
+                total: 123,
+                totalUnit: "kwh",
+
+                totalCompareMonth: ""
+            },
             summaryTable: [
                 ["总用电量", "12349.00kwh"]
             ],
@@ -59,7 +66,7 @@ define(function (require) {
         $scope.datas = { ...settings.default_datas, ...datas };
 
         $scope.gotoSummary = function() {
-            $scope.goto("building_summary/"+$stateParams.id);
+            $scope.goto("building_nhjl/"+$stateParams.id);
         }
 
         $scope.displaySettings = function(type) {
@@ -71,13 +78,17 @@ define(function (require) {
             $scope.get_datas($scope);
         }
 
+        $scope.changeType = function(ind) {
+            $scope.datas.topMenuSelected = ind;
+        }
+
         $scope.gotoDetail = function(bid, type) {
 
         }
 
         // 执行函数
         //$scope.get_datas($scope);
-        $scope.changeFloor($scope.datas.subMenuSelected);
+        //$scope.changeFloor($scope.datas.subMenuSelected);
 
     }])
 });
