@@ -6,25 +6,14 @@
     </div>
 
     <div class="mainbody buildingNHJL">
-    	<div class="form-inline form-withmargin">
-	        <div class="btn-group btn-group-justified" role="group">
-	            <a class="btn --primary">
-	            	监测分析
-	            </a>
-	            <a class="btn" ng-click="gotoPage('sjtj');">
-	                数据统计
-	            </a>
-	            <a class="btn" ng-click="gotoPage('bjcl');">
-		            报警处理
-		        </a>
-	            <!-- <a class="btn" ng-click="gotoPage('jcsj');">
-		            基础数据
-		        </a> -->
-	        </div>
-	        <div class="clearfix"></div>
-	    </div>
+    	<ul class="category-head category-head-center">
+			<li class="on" ng-click="changeTab(0);">监测分析</li>
+			<li ng-click="gotoPage('sjtj');">数据统计</li>
+			<li ng-click="gotoPage('bjcl');">报警处理</li>
+			<div class="clearfix"></div>
+		</ul>
 
-		<div class="clearfix"></div>
+		<p class="clearfix">&nbsp;</p>
 
 		<h2>
 			总能耗概况

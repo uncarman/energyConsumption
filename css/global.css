@@ -47,9 +47,10 @@ h3 { font-size: 20px; font-weight: bold; text-align: center; }
 h4 { font-size: 16px; font-weight: bold; line-height: 1.5; }
 h2 em { font-size: 14px; line-height: 2; }
 
-.topMenu { height: 50px; padding: 10px; background: #ddd; }
+.topMenu { height: 50px; padding: 10px; background: #08f; color: #fff; box-shadow: 0px 3px 5px #eee; }
 .topMenu * { line-height: 30px; }
-
+.topMenu .glyphicon { width: 24px; text-align: center;  }
+.topMenu h3 { text-align: left; margin-left:35px;  }
 
 .media .glyphicon { float: right; }
 
@@ -58,25 +59,38 @@ h2 em { font-size: 14px; line-height: 2; }
 .login h5 { font-size: 14px; color:rgb(140,140,140); margin-bottom: 40px; }
 
 .home { }
-.home .map { border: 1px solid red; width: 100%; min-height:500px; }
-.home .media { border-bottom: 1px solid #ddd; margin-bottom:10px; padding-bottom:15px; }
+.home .map { width: 100%; }
+.home .media { border-bottom: 1px solid #eee; margin-bottom:10px; padding-bottom:15px; }
+.home .btn-group { text-align: center; padding-bottom: 5px;  }
+.home .btn-group a { width: 80px; line-height: 40px; color: #666; text-align: center; display: inline-block; border: none; }
+.home .btn-group .--primary { font-weight: bold; background: none; border-bottom: 3px solid #08f; color: #08f;  }
+.home .media .glyphicon { width: 30px; height: 80px; text-align: center; line-height: 80px; }
+
+
+.list-group-item { padding-top: 15px; padding-bottom: 15px; font-size: 16px; border-color: #eee; }
+.list-group-item .glyphicon { width: 24px; text-align: center; }
+
+.media .media-body h4 { font-weight: normal; margin: 5px; color: #333; }
+.media .media-body p { color: #999; }
+
 
 .buildingSummary {}
 .buildingSummary .list-group li { line-height: 2; }
+.buildingSummary h4 { font-weight: normal; }
 
 
 .buildingDetail {}
 .buildingDetail .media-object { width:100%; margin-bottom: 15px; }
 .buildingDetail .media-location { margin: 10px 0 20px; }
-.buildingDetail .list-group-item { padding: 10px 0; }
 
-.buildingNTKT {}
+
+.buildingNTKT { padding-top:0px; }
 .buildingNTKT h4 { margin-bottom: 15px;  }
 
 
-.buildingNHJL {}
-.buildingNHJL h2 { margin: 0 0 15px 0; }
-
+.buildingNHJL, .buildingNHJLDetail { padding-top:0px; }
+.buildingNHJL h2 { margin: 0 0 15px 0; font-size: 16px; }
+.buildingNHJL h2 em { line-height: 1; color: #999; }
 
 .curFloor { width: 100%; margin: 20px 0;}
 .curFloor img { width: 100%; padding-bottom: 20px; margin-bottom: 20px; }
@@ -86,12 +100,14 @@ h2 em { font-size: 14px; line-height: 2; }
 .summaryOuter {width:100%; display: inline; white-space: nowrap;overflow-x:scroll;float:left;overflow-y:hidden;}
 .summaryNH { margin: 0px; }
 .summaryNH th, .buildingNHJL .summaryNH td { white-space: nowrap; } 
-.summaryNH td { color: #2e6da4; }
+.summaryNH td { color: #08f; }
 .echart { margin: 15px 0; width:100%; background: #efefef; }
 .echart img { width: 100%; }
 
-.buildingBJCL {}
-.buildingBJCL .list-group { border-left:1px solid #ddd; border-right:1px solid #ddd; }
+.buildingBJCL { padding-top:0px; }
+.buildingBJCL .list-group { border-left:1px solid #eee; border-right:1px solid #eee; line-height: 10px; }
+.list-group-item { font-size: 14px; }
+.list-group-item-info { font-weight: bold; }
 
-.buildingSJTJ {}
+.buildingSJTJ { padding-top:0px; }
 .buildingSJTJ h2 { margin-bottom: 10px; font-size: 16px; }

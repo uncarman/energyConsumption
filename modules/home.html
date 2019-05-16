@@ -4,8 +4,8 @@
 
         <div class="form-inline form-withmargin">
             <div class="btn-group btn-group-justified" role="group">
-                <a class="btn" ng-class="datas.opt.state == 1 ? '--primary' : ''" ng-click="reset_datas(this, 1);">地图</a>
-                <a class="btn" ng-class="datas.opt.state == 2 ? '--primary' : ''" ng-click="reset_datas(this, 2);">列表</a>
+                <a class="" ng-class="datas.opt.state == 1 ? '--primary' : ''" ng-click="reset_datas(this, 1);">地图</a>
+                <a class="" ng-class="datas.opt.state == 2 ? '--primary' : ''" ng-click="reset_datas(this, 2);">列表</a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -15,7 +15,7 @@
         </div>
         <div class="list" ng-show="datas.opt.state == 2">
             <div class="media" ng-click="gotoSummary(b.id);" ng-repeat="b in datas.dataList">
-                <div class="glyphicon glyphicon-chevron-right"></div>
+                <div class="glyphicon glyphicon-menu-right"></div>
                 <div class="media-left">
                     <a>
                         <img class="media-object" ng-src="{{b.img}}" style="width: 64px; height: 64px;">
