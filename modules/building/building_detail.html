@@ -6,15 +6,18 @@
 
     <div class="mainbody buildingDetail">
     	
-    	<img class="media-object" ng-src="{{datas.building.img}}">
-    	<h4 class="media-heading" ng-bind="datas.building.name"></h4>
-		<p class="media-location" ng-bind="datas.building.location"></p>
-
+        <div class="topBlock">
+        	<img class="media-object" ng-src="{{datas.building.img}}">
+        	<h4 class="media-heading" ng-bind="datas.building.name"></h4>
+    		<p class="media-location" ng-bind="datas.building.location"></p>
+        </div>
+        
     	<ul class="list-group">
 			<li class="list-group-item" ng-repeat="f in datas.building.features">
-				<img class="icons pull-left" ng-src="{{f[0]}}" />
-				<span ng-bind="f[1]" class="pull-left"></span>
-				<span ng-bind="f[2]" class="pull-right"></span>
+				<!-- <img class="icons pull-left" ng-src="{{f[0]}}" /> -->
+                <!-- <span class="glyphicon glyphicon-triangle-right pull-left"></span> -->
+				<span ng-bind="f[1]" class="text-title pull-left"></span>
+				<span ng-bind="f[2]" class="text-content pull-right"></span>
 				<div class="clearfix"></div>
 			</li>
 		</ul>

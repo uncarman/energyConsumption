@@ -157,6 +157,8 @@ margin-bottom: 5px; border-bottom: 1px solid #ccc; }
 
 .dialog { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0,0,0,0.2); z-index: 1000; }
 .dialog .modal-dialog { margin: 25px; }
-.dialog .modal-content { border: none; border-radius: 10px; }
+.dialog .modal-content { border: none; border-radius: 0px; box-shadow: none; }
 .dialog .modal-body .row { margin: 0 0 15px 0; }
 .dialog .modal-body .row .row-title { font-weight: bold; line-height: 2; }
+.dialog .modal-dialog .glyphicon-remove { color: #888; }
+.dialog .modal-dialog .--primary, .dialog .modal-dialog .--primary:active { line-height: 1.6; color: #fff; }

@@ -86,7 +86,7 @@ define(function (require) {
         }
 
         $scope.initMapSize = function() {
-            var height = document.documentElement.clientHeight - $(".form-inline").height() - 50;
+            var height = document.documentElement.clientHeight - $(".form-inline").height() - 45;
             $("#"+$scope.datas.map_id).css({"height": height});
         }
         
