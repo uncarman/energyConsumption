@@ -71,7 +71,7 @@ h2 em { font-size: 14px; line-height: 2; }
 .list-group-item .glyphicon { width: 24px; text-align: center; }
 
 .media .media-body { margin: 0 5px 0 10px; }
-.media .media-body h4 { font-weight: normal; color: #333; }
+.media .media-body h4 { font-weight: normal; color: #333; max-height: 45px; overflow: hidden; }
 .media .media-body p { color: #999; }
 
 
