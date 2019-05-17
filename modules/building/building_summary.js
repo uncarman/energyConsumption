@@ -18,7 +18,7 @@ define(function (require) {
             // 假数据
             building: {
                 id: $stateParams.id,
-                img: "../imgs/default.png",
+                img: "../imgs/building.png",
                 name: "嘉兴市融通商务中心4号楼嘉兴市融通商务中心4号楼",
                 location: "嘉兴市某某路XXX号",
             }

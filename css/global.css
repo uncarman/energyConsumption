@@ -1,6 +1,6 @@
 
 body {  }
-.mainbody { margin: 0px; background: #fff; padding: 15px; }
+.mainbody { margin: 0px; background: #fff; padding: 15px; color: #666; }
 
 .form-withmargin { padding-bottom: 20px; }
 
@@ -62,7 +62,7 @@ h2 em { font-size: 14px; line-height: 2; }
 .home .map { width: 100%; }
 .home .media { border-bottom: 1px solid #eee; margin-bottom:10px; padding-bottom:15px; }
 .home .btn-group { text-align: center; padding-bottom: 5px;  }
-.home .btn-group a { width: 80px; line-height: 40px; color: #666; text-align: center; display: inline-block; border: none; }
+.home .btn-group a { width: 80px; line-height: 40px; color: #666; text-align: center; display: inline-block; border: none; border-radius: 0px; }
 .home .btn-group .--primary { font-weight: bold; background: none; border-bottom: 3px solid #08f; color: #08f;  }
 .home .media .glyphicon { width: 30px; height: 80px; text-align: center; line-height: 80px; }
 
@@ -70,7 +70,8 @@ h2 em { font-size: 14px; line-height: 2; }
 .list-group-item { padding-top: 15px; padding-bottom: 15px; font-size: 16px; border-color: #eee; }
 .list-group-item .glyphicon { width: 24px; text-align: center; }
 
-.media .media-body h4 { font-weight: normal; margin: 5px; color: #333; }
+.media .media-body { margin: 0 5px 0 10px; }
+.media .media-body h4 { font-weight: normal; color: #333; }
 .media .media-body p { color: #999; }
 
 
@@ -107,7 +108,8 @@ h2 em { font-size: 14px; line-height: 2; }
 .buildingBJCL { padding-top:0px; }
 .buildingBJCL .list-group { border-left:1px solid #eee; border-right:1px solid #eee; line-height: 10px; }
 .list-group-item { font-size: 14px; }
-.list-group-item-info { font-weight: bold; }
+.list-group-item-info { color: #888; background-color: #eee; }
+.list-group-item .badge { font-weight: normal; background-color: #999; }
 
 .buildingSJTJ { padding-top:0px; }
 .buildingSJTJ h2 { margin-bottom: 10px; font-size: 16px; }
