@@ -10,9 +10,8 @@
             <div class="clearfix"></div>
         </div>
 
-        <div class="map" ng-show="datas.opt.state == 1">
-            map
-        </div>
+        <div class="map" id="map" ng-show="datas.opt.state == 1"></div>
+
         <div class="list" ng-show="datas.opt.state == 2">
             <div class="media" ng-click="gotoSummary(b.id);" ng-repeat="b in datas.dataList">
                 <div class="glyphicon glyphicon-menu-right"></div>
@@ -38,5 +37,4 @@
 
     </div>
 </div>
-
 

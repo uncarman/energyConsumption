@@ -15,8 +15,13 @@ define(function (require) {
 
         // 初始化数据
         var datas = {
+            map_id: "map",
+            mapPos: null,
+            map_zoom_max_limit: 24,
+            map_zoom_max: 12,
+            map_zoom_min: 6,
             opt: {
-                state: 2
+                state: 1
             }
         }
         $scope.datas = { ...settings.default_datas, ...datas };
@@ -52,7 +57,19 @@ define(function (require) {
             $scope.goto("building_summary/"+id);
         }
 
+        $scope.init_map_size = function() {
+            var height = document.documentElement.clientHeight - $(".form-inline").height() - 50;
+            $("#"+$scope.datas.map_id).css({"height": height});
+        }
+        
+
         // 执行函数
         $scope.get_datas($scope);
+
+        // 初始化地图
+        $scope.init_map_size();
+        global.init_map($scope);
+        console.log($scope.map);
+
     }])
 });

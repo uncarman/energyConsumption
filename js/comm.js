@@ -916,6 +916,22 @@ define(function (require, exports, module) {
                 }
             }, [401]);
         },
+
+        // 初始化地图
+        init_map: function($scope) {
+            $scope.map = new AMap.Map($scope.datas.map_id,{
+                resizeEnable: true,
+                rotateEnable:true,
+                pitchEnable:true,
+                zoom: parseInt(($scope.datas.map_zoom_min + $scope.datas.map_zoom_max)/2),
+                pitch:45,
+                rotation:0,
+                //viewMode:'3D',//开启3D视图,默认为关闭
+                expandZoomRange:true,
+                zooms:[$scope.datas.map_zoom_min, $scope.datas.map_zoom_max_limit],
+            });
+
+        }
     }
 
     // 扩展array的indexOf方法

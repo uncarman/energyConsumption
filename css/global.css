@@ -2,7 +2,7 @@
 body {  }
 .mainbody { margin: 0px; background: #fff; padding: 15px; color: #666; }
 
-.form-withmargin { padding-bottom: 20px; }
+.form-withmargin { padding-bottom: 10px; }
 
 .dot-text { }
 .dot-text:before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 6px; margin-right: 5px; vertical-align: middle; }
@@ -47,10 +47,10 @@ h3 { font-size: 20px; font-weight: bold; text-align: center; }
 h4 { font-size: 16px; font-weight: bold; line-height: 1.5; }
 h2 em { font-size: 14px; line-height: 2; }
 
-.topMenu { height: 50px; padding: 10px; background: #08f; color: #fff; box-shadow: 0px 3px 5px #eee; }
+.topMenu { height: 50px; padding: 10px; background: #08f; color: #fff; border-bottom: 2px solid #ddd; }
 .topMenu * { line-height: 30px; }
-.topMenu .glyphicon { width: 24px; text-align: center;  }
-.topMenu h3 { text-align: left; margin-left:35px;  }
+.topMenu .glyphicon { width: 24px; text-align: center; top: 0px; }
+.topMenu h3 { text-align: left; margin-left:35px; font-weight: normal;  }
 
 .media .glyphicon { float: right; }
 
@@ -59,7 +59,7 @@ h2 em { font-size: 14px; line-height: 2; }
 .login h5 { font-size: 14px; color:rgb(140,140,140); margin-bottom: 40px; }
 
 .home { }
-.home .map { width: 100%; }
+.home .map { width: 100%; z-index: 1000; }
 .home .media { border-bottom: 1px solid #eee; margin-bottom:10px; padding-bottom:15px; }
 .home .btn-group { text-align: center; padding-bottom: 5px;  }
 .home .btn-group a { width: 80px; line-height: 40px; color: #666; text-align: center; display: inline-block; border: none; border-radius: 0px; }
