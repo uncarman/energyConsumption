@@ -1,0 +1,13 @@
+
+.clearfixed { clear:both; }
+.mr10 { margin-right:10px; }
+
+.w100 { width: 100px; }
+
+
+.info-box-number { font-size: 24px; }
+.info-box-content { margin-left:0px; }  
+.info-box .progress { height: 1px; }
+
+.info-box-icon { font-size: 30px; }
+.info-box-normal .info-box-content { margin-left: 90px;  }
